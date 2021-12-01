@@ -32,4 +32,4 @@ jobs:
           pip install msedge.selenium_tools
       - name: Update zhihu
         run:
-          python 抢场.py
+          python qc.py

@@ -11,7 +11,7 @@ jobs:
     steps:
     
     #引用外部Action,拉取代码仓库到虚拟机工作目录
-    - name : pull UPC-nCoV-submit
+    - name : pull qc-submit
       run: |
         git init
         git pull https://github.com/Milleroh/Badminton-hall.git

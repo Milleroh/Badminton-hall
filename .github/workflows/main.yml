@@ -41,4 +41,4 @@ jobs:
     # 运行
     - name : qc_start
       run: |
-        python ncov.py
+        python qc.py

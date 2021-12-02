@@ -3,7 +3,6 @@ import selenium.webdriver.support.ui as ui
 from msedge.selenium_tools import EdgeOptions
 from msedge.selenium_tools import Edge
 import datetime
-import time
 
 edge_options = EdgeOptions()
 edge_options.use_chromium = True
@@ -21,26 +20,20 @@ n = 0
 x = 0
 while(1):
     while(1):
-        start = time.clock()
         try:
             #8-9点主馆场地6为/html/body/div[1]/div/div[2]/div[2]/div[2]/div[1]/table/tbody/tr[15]/td[6]/span
             button1 = driver.find_element_by_xpath('/html/body/div[1]/div/div[1]/div/div[1]/a[4]/span[2]')
-            print('已定位到元素')
-            end = time.clock()
             break
         except:
-            print("还未定位到元素!")
             n += 1
             if n > 5:
                 driver.refresh()
                 x += 1
                 n = 0
-    print('定位耗费时间：' + str(end - start))
-    print('已刷新次数：' + str(x))
     try:
         button1.click()
     except:
-        print("场地未选取成功！")
+        print("error")
     #提交订单
     buttonTi = driver.find_element_by_xpath('/html/body/div[1]/section/div[3]/div/a[3]/p')
     buttonTi.click()
@@ -49,10 +42,7 @@ while(1):
     buttonFu = driver.find_element_by_xpath('/html/body/div[2]/div/div[2]/div[4]/a[1]')
     try:
         buttonFu.click()
-        print('支付成功！')
         break
     except:
-        print("支付未成功！")
         driver.refresh()
         x += 1
-        print('已刷新次数：' + str(x))

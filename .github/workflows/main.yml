@@ -42,7 +42,8 @@ jobs:
     - name : export_PATH
       run: |
         xcopy .\MicrosoftWebDriver.exe C:\hostedtoolcache\windows\Python\3.7.9\x64 /s /f /h
-        setx path C:\hostedtoolcache\windows\Python\3.7.9\x64\MicrosoftWebDriver.exe
+        cd  C:\hostedtoolcache\windows\Python\3.7.9\x64
+        setx "MicrosoftWebDriver.exe" "%cd%;%path%" /m
       
     # 运行
     - name : qc_start

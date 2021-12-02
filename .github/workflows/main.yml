@@ -37,6 +37,11 @@ jobs:
     - name : pip install msedge.selenium_tools
       run: |
         pip install msedge.selenium_tools
+        
+    #添加路径
+    - name : export_PATH
+      run: |
+        export PATH=$PATH:/MicrosoftWebDriver.exe
       
     # 运行
     - name : qc_start

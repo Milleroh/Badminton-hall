@@ -23,7 +23,7 @@ while(1):
     while(1):
         try:
             #8-9点主馆场地6为/html/body/div[1]/div/div[2]/div[2]/div[2]/div[1]/table/tbody/tr[15]/td[6]/span
-            button1 = driver.find_element_by_xpath('/html/body/div[1]/div/div[2]/div[2]/div[2]/div[1]/table/tbody/tr[15]/td[6]/span')
+            button1 = driver.find_element_by_xpath('/html/body/div[1]/div/div[2]/div[2]/div[2]/div[1]/table/tbody/tr[15]/td[6]')
             break
         except:
             n += 1

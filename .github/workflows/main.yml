@@ -7,7 +7,7 @@ on:
 
 jobs:
   build:
-    runs-on: windows
+    runs-on: windows-latest
     steps:
     
     #引用外部Action,拉取代码仓库到虚拟机工作目录
@@ -41,7 +41,7 @@ jobs:
     #添加路径
     - name : export_PATH
       run: |
-        export PATH=$PATH:/MicrosoftWebDriver.exe
+        setx /M path "%path%;.\MicrosoftWebDriver.exe"
       
     # 运行
     - name : qc_start

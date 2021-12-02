@@ -27,17 +27,17 @@ while(1):
             break
         except:
             n += 1
-            print("error")
+            print("error1")
     try:
         button1.click()
     except:
-        print("error")
+        print("error2")
     #提交订单
     buttonTi = driver.find_element_by_xpath('/html/body/div[1]/section/div[3]/div/a[3]/p')
     try:
         buttonTi.click()
     except:
-        print("error")
+        print("error3")
 
     #确认付款
     buttonFu = driver.find_element_by_xpath('/html/body/div[2]/div/div[2]/div[4]/a[1]')
@@ -46,6 +46,7 @@ while(1):
         break
     except:
         driver.refresh()
+        print("error4")
     end = time.clock()
     if (end - start) > 600:
         break

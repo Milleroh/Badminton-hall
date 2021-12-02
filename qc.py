@@ -49,5 +49,5 @@ while(1):
         driver.refresh()
         x += 1
     end = time.clock()
-    if (end - start) > 60:
+    if (end - start) > 600:
         break

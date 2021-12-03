@@ -21,7 +21,7 @@ start = time.clock()
 while(1):
     time_now = datetime.datetime.now()
     if time_now.hour == 6:
-        if time_now.minute == 39:
+        if time_now.minute == 42:
             driver.refresh()
             break
 while(1):
@@ -32,12 +32,12 @@ while(1):
             button2 = driver.find_element_by_xpath('/html/body/div[1]/div/div[2]/div[2]/div[2]/div[1]/table/tbody/tr[14]/td[6]/span')
             break
         except:
-            print("还未定位到元素!")
+            print("error1")
     try:
         button1.click()
         button2.click()
     except:
-        print("场地未选取成功！")
+        print("error2")
     #提交订单
     buttonTi = driver.find_element_by_xpath('/html/body/div[1]/section/div[3]/div/a[3]/p')
     buttonTi.click()
@@ -48,7 +48,7 @@ while(1):
         buttonFu.click()
         break
     except:
-        print("支付未成功！")
+        print("error3")
         end = time.clock()
         if (end - start) > 600:
             break

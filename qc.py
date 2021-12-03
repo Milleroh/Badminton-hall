@@ -20,8 +20,8 @@ driver.get(url)
 start = time.clock()
 while(1):
     time_now = datetime.datetime.now()
-    if time_now.hour == 6:
-        if time_now.minute == 42:
+    if time_now.hour == 0:
+        if time_now.minute == 0:
             driver.refresh()
             break
 while(1):

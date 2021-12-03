@@ -9,7 +9,7 @@ edge_options = EdgeOptions()
 edge_options.use_chromium = True
 edge_options.add_argument('--disable-blink-features=AutomationControlled')
 
-driver = Edge(executable_path='C:/Program Files (x86)/Microsoft Visual Studio/Shared/Python37_64/MicrosoftWebDriver.exe', options=edge_options)
+driver = Edge(executable_path='./MicrosoftWebDriver.exe', options=edge_options)
 data = (datetime.datetime.now()+datetime.timedelta(days=2)).strftime("%Y-%m-%d")
 data = str(data)
 print(data)
@@ -21,7 +21,7 @@ start = time.clock()
 while(1):
     time_now = datetime.datetime.now()
     if time_now.hour == 6:
-        if time_now.minute == 35:
+        if time_now.minute == 39:
             driver.refresh()
             break
 while(1):

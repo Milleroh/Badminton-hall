@@ -13,17 +13,17 @@ driver = Edge(executable_path='./MicrosoftWebDriver.exe', options=edge_options)
 data = (datetime.datetime.now()+datetime.timedelta(days=2)).strftime("%Y-%m-%d")
 data = str(data)
 print(data)
-url = 'http://www.koksoft.com/weixinordernewv7.aspx?wxkey=153DC84BBF7CABBB49618F7ED48D5A310A30AB1DF70AD3A9D56E06C4361FE6E3A7257A467D56E248AB776CEFF445264D618B4CBC82AED3FDA1BF65E52E21239214900E6959D0178A6F43F133A18724422EE19A24CDE8D2929D141458590A907CFEC5A5357032FEE4B5677F755E27BBA9&lxbh=Y&orderdate='
+url = 'http://www.koksoft.com/weixinordernewv7.aspx?wxkey=153DC84BBF7CABBB49618F7ED48D5A310A30AB1DF70AD3A9D56E06C4361FE6E3A7257A467D56E248AB776CEFF445264D618B4CBC82AED3FDA1BF65E52E21239214900E6959D0178A6F43F133A1872442A85FB12EAD31E9B3AF3B242087A383F490F4EB38C6C53C08861976C0B3A6DDE3&lxbh=Y&orderdate='
 url = url + data
-driver.get(url)
 
 start = time.clock()
 while(1):
     time_now = datetime.datetime.now()
-    if time_now.hour == 0:
-        if time_now.minute == 0:
-            driver.refresh()
-            break
+    if time_now.hour == 23:
+        if time_now.minute == 59:
+            if time_now.second == 58:
+                driver.get(url)
+                break
 while(1):
     while(1):
         try:
